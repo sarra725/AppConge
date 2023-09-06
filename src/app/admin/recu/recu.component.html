@@ -1,0 +1,50 @@
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header" style="text-align: center;">Conge List</div>
+
+   
+      
+
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    
+                    <th>ID</th>
+                    <th>date de debut</th>
+                    <th>date de fin</th>
+                    <th>la cause</th>
+                    <th>Response</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of productData">
+                   
+                    <td>{{p.id}}</td>
+                    <td>{{p.debut}}</td>
+                    <td>{{p.fin}}</td>
+                    <td>{{p.cause}}</td>
+
+                    
+                   
+                    <td>
+                        <button class="btn btn-success" (click)="accpeterMethode(p.id)">Accepter</button>
+                   &nbsp;
+                        <button class="btn btn-danger" (click)="RefuserMethode(p.id)">Refuser</button>
+                    </td>
+                   
+                                    
+                  </tr>
+                                  
+                </tbody>
+              </table>
+
+
+        </div>
+    </div>
+        
+   
+  </div>
+  
+

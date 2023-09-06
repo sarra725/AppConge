@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header" style="text-align: center;">Product List</div>
+
+   
+      
+
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    
+                    <th>ID</th>
+                    <th>date de debut</th>
+                    <th>date de fin</th>
+                    <th>la cause</th>
+                    <th>Response</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of productData">
+                   
+                    <td>{{p.id}}</td>
+                    <td>{{p.debut}}</td>
+                    <td>{{p.fin}}</td>
+                    <td>{{p.cause}}</td>
+                    <td>{{p.Response}}</td>
+
+                    
+                    <td>
+                      <button type="button" (click)="Delet(p)"><i class="bi bi-trash-fill text-danger"></i></button>
+                    </td>
+                    <td>
+                      
+                    </td>
+                    <td>
+                      <button type="button"(click)="gotoEditproduct(p)" routerLink="/edit" ><i class="bi bi-pen-fill text-success"></i></button>
+                    </td>
+                                    
+                  </tr>
+                                  
+                </tbody>
+                <button routerLink="/ajouter" type="button"> Add congee</button>
+              </table>
+
+
+        </div>
+    </div>
+        
+   
+  </div>
+  
+

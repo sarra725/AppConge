@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="card">
+      <div class="card-header" style="text-align: center;">Ajouter congé</div>
+      <div class="card-body">
+          <form [formGroup]="Newproduct" (ngSubmit)="save()" >
+              <div class="mb-3 mt-3">
+                <label  class="form-label">ID:</label>
+                <input type="text" class="form-control" formControlName="id">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Date de début</label>
+                <input  class="form-control" type="date" formControlName="debut" >
+              </div>
+              <div class="mb-3">
+                  <label  class="form-label">date de fin</label>
+                  <input  class="form-control" type="date" formControlName="fin" >
+                </div>
+                <label for="pwd" class="form-label">Role:</label>
+                <select class="form-select" name="role" formControlName="cause">
+
+                    <option>Maladie</option>
+                    <option>Congé Annuel</option>
+                    
+                </select>
+           
+              <button  type="submit" class="btn btn-success" >SAVE</button>
+              
+            </form>
+      </div>
+  </div>
+</div>

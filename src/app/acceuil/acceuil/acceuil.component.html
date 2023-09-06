@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="alertvar">
+      <strong>Please check your Email or Password</strong> 
+    </div>
+      <div class="card">
+        
+          <div class="card-header">Authentification</div>
+  
+          <div class="card-body">
+              <form >
+                  <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" [(ngModel)]="logList.email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" [(ngModel)]="logList.pswd" >
+                  </div>
+                  <label for="pwd" class="form-label">Role:</label>
+                  <select class="form-select" name="role" [(ngModel)]="logList.role">
+  
+                      <option>ADMIN</option>
+                      <option>USER</option>
+                      
+                  </select>
+                  
+                  
+                  <button type="button" class="btn btn-primary" (click)="lien()" >connecter</button>
+                </form>
+          </div>
+      </div>
+  </div>
+  
+  
