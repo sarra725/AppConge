@@ -2,12 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { users } from 'src/app/mode/util';
 import { ServiceService } from 'src/app/services/service.service';
 
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  [x: string]: any;
+  DATA={
+    keyword:""
+  }
   regData!:Array<users>
   constructor(private regservice:ServiceService){}
    ngOnInit(): void {
@@ -28,5 +34,11 @@ export class RegisterComponent implements OnInit {
      }
      
    }
+   Delet(data:users){
+   
+    {
+       this.regservice.deletProduct(data)
+   }
  }
- 
+
+ } 

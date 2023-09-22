@@ -22,8 +22,8 @@ const routes: Routes = [
   {path:"demande",component:DemandeComponent},
   {path:"ajouter",component:AjouterComponent},
   {path:"edit/:id",component:EditComponent},
-  {path:"product",component:ProductComponent},
-  {path:"products",component:ProductsComponent},
+  {path:"user1",component:ProductComponent},
+  {path:"users",component:ProductsComponent},
 
 ];
 

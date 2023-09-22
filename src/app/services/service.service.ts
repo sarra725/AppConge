@@ -21,18 +21,29 @@ userData!:Array<users>
   Adduser(data:users){
    this.userData.push(data)
   }
+  
+  deletProduct(data:users){
+    let x =this.userData.indexOf(data)
+    this.userData.splice(x,1)
+   }
+
   loginTest(data:users){
     for (let item of this.userData) {
-      if ((item.email==data.email)&&(item.pswd==data.pswd)&&(item.role==data.role))
-       {
+     
+    if ((item.email==data.email)&&(item.pswd==data.pswd)&&(item.role==data.role))
+      {
         if ((data.role=="ADMIN"))
         {
          this.route.navigateByUrl("/admin")
+         
         }
        else    this.route.navigateByUrl("/user")
      }
 
-       }  
+else alert('erreur')
+                 }  
+     
+    
        }
       
       

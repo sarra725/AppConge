@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DemandeService } from '../services/demande.service';
 import { Router } from '@angular/router';
 
@@ -11,19 +11,23 @@ import { Router } from '@angular/router';
 export class AjouterComponent implements OnInit {
   
   Newproduct!:FormGroup
+fin: any;
+id: any;
   constructor(private fb:FormBuilder,private newcong:DemandeService,private route:Router){}
   
   
   ngOnInit(): void {
    this.Newproduct=this.fb.group(
-    { id:this.fb.control((null)),
-      debut:this.fb.control((null)),
-      fin:this.fb.control((null)),
-      cause:this.fb.control((null))
+    { id:this.fb.control((null),[Validators.required]),
+      debut:this.fb.control((null),[Validators.required]),
+      fin:this.fb.control((null),[Validators.required]),
+      cause:this.fb.control((null),[Validators.required]),
     }
    )
   }
   save(){
+   
+
    let product=this.Newproduct.value
    product.Response='En attente'
    this.newcong.AddProduct(product)
@@ -32,6 +36,8 @@ export class AjouterComponent implements OnInit {
    alert("Your product is added succesuflly")
     this.route.navigate(['/demande']);
     //console.log("Newproduct=>",this.Newproduct.value)
+    
+   
   }
 
 }

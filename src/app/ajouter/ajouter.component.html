@@ -15,15 +15,15 @@
                   <label  class="form-label">date de fin</label>
                   <input  class="form-control" type="date" formControlName="fin" >
                 </div>
-                <label for="pwd" class="form-label">Role:</label>
+                <label for="pwd" class="form-label">cause:</label>
                 <select class="form-select" name="role" formControlName="cause">
 
                     <option>Maladie</option>
-                    <option>Congé Annuel</option>
-                    
+                    <option>accident</option>
+                    <option>autre</option>
                 </select>
            
-              <button  type="submit" class="btn btn-success" >SAVE</button>
+              <button  [disabled]="!Newproduct.valid " type="submit" class="btn btn-success" >SAVE</button>
               
             </form>
       </div>
